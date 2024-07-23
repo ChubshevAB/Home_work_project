@@ -43,11 +43,10 @@ def mask_account_card(user_input: str) -> str:
     )
 
     # Возврат работы функции в зависимости от полученного аргумента
-    for i in user_input:
-        if i == "С":
-            return mask_account
-        elif i != "С":
-            return mask_card
+    if "С" in user_input:
+        return mask_account
+    else:
+        return mask_card
 
 
 def get_date(user_date: str) -> str:
