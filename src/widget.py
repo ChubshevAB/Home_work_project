@@ -57,5 +57,5 @@ def get_date(user_date: str) -> str:
     return new_date
 
 
-print(mask_account_card(user_input="Maestro 8990922113665229"))
-print(get_date(user_date="2024-07-20T02:26:18.671407"))
+# print(mask_account_card(user_input="Master Card 1234123412341234"))
+# print(get_date(user_date="2024-07-20T02:26:18.671407"))
