@@ -56,6 +56,17 @@ def filter_by_currency(transactions: list, code: str) -> iter:
     return iter(my_transactions)
 
 
-usd_transactions = filter_by_currency(transactions, "USD")
+# usd_transactions = filter_by_currency(transactions, "USD")
+# for i in range(5):
+#     print(next(usd_transactions))
+
+
+def transaction_descriptions(transactions: list) -> iter:
+    '''Функция принимает список словарей с транзакциями и возвращает описание каждой операции по очереди'''
+    my_description = iter([el['description'] for el in transactions])
+    return my_description
+
+transactions_list = transaction_descriptions(transactions)
 for i in range(5):
-    print(next(usd_transactions))
+    print(next(transactions_list))
+
