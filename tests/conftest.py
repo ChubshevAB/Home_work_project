@@ -79,4 +79,21 @@ def generators_filter_by_currency():
 
 @pytest.fixture
 def generators_transaction_descriptions():
-    returne
+    return (
+        "Перевод организации",
+        "Перевод со счета на счет",
+        "Перевод со счета на счет",
+        "Перевод с карты на карту",
+        "Перевод организации",
+    )
+
+
+@pytest.fixture
+def generators_card_number_generator():
+    return (
+        "0000 0000 0000 0001",
+        "0000 0000 0000 0002",
+        "0000 0000 0000 0003",
+        "0000 0000 0000 0004",
+        "0000 0000 0000 0005",
+    )
