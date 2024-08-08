@@ -35,6 +35,12 @@
 - typing_extensions==4.12.2
 - urllib3==2.2.2
 
+## Тестирование функций проекта
+В пакете Tests находятся тесты для имеющихся в проэкте функций.
+Названия тестовых модулей совпадает с названиями модулей функций, но добавлен префикс "test_"
+Для запуска тестов необходимо ввести команду pytest в еурминале PeCharm.
+
 #### Ссылка на пул-реквест
 
-[GitHub](https://github.com/ChubshevAB/Home_work_project/pull/1)
+1. [GitHub](https://github.com/ChubshevAB/Home_work_project/pull/1)
+2. [Pull Request](https://github.com/ChubshevAB/Home_work_project/pull/4)
