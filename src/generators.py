@@ -47,19 +47,19 @@ transactions = [
 ]
 
 
-def filter_by_currency(transactions: list, code: str) -> iter:
+def filter_by_currency(transactions: list) -> iter:
     """Функция принимает в качестве аргумента список транзакций и код транзакции и возвращает итератор в соответствии с заданными аргументами"""
     my_transactions = []
     for element in transactions:
-        if element["operationAmount"]["currency"]["code"] == code:
+        if element["operationAmount"]["currency"]["code"] == 'USD':
             my_transactions.append(element)
     return iter(my_transactions)
 
 
 # Пример работы функции
-usd_transactions = filter_by_currency(transactions, "USD")
-for i in range(5):
-    print(next(usd_transactions))
+# usd_transactions = filter_by_currency(transactions)
+# for i in range(3):
+#     print(next(usd_transactions))
 
 
 def transaction_descriptions(transactions: list) -> iter:
@@ -69,9 +69,9 @@ def transaction_descriptions(transactions: list) -> iter:
 
 
 # Пример работы функции
-transactions_list = transaction_descriptions(transactions)
-for i in range(5):
-    print(next(transactions_list))
+# transactions_list = transaction_descriptions(transactions)
+# for i in range(5):
+#     print(next(transactions_list))
 
 
 def card_number_generator(start: int, end: int):
@@ -89,5 +89,5 @@ def card_number_generator(start: int, end: int):
 
 
 # Пример использования генератора
-for card_number in card_number_generator(1, 5):
-    print(card_number)
+# for card_number in card_number_generator(1, 5):
+#     print(card_number)
