@@ -56,17 +56,38 @@ def filter_by_currency(transactions: list, code: str) -> iter:
     return iter(my_transactions)
 
 
-# usd_transactions = filter_by_currency(transactions, "USD")
-# for i in range(5):
-#     print(next(usd_transactions))
+# Пример работы функции
+usd_transactions = filter_by_currency(transactions, "USD")
+for i in range(5):
+    print(next(usd_transactions))
 
 
 def transaction_descriptions(transactions: list) -> iter:
-    '''Функция принимает список словарей с транзакциями и возвращает описание каждой операции по очереди'''
-    my_description = iter([el['description'] for el in transactions])
+    """Функция принимает список словарей с транзакциями и возвращает описание каждой операции по очереди"""
+    my_description = iter([el["description"] for el in transactions])
     return my_description
 
+
+# Пример работы функции
 transactions_list = transaction_descriptions(transactions)
 for i in range(5):
     print(next(transactions_list))
 
+
+def card_number_generator(start: int, end: int):
+    """
+    Генератор номеров банковских карт в формате XXXX XXXX XXXX XXXX.
+
+    :param start: Начальное значение (должно быть в диапазоне от 1 до 9999 9999 9999 9999)
+    :param end: Конечное значение (должно быть в пределах от 1 до 9999 9999 9999 9999)
+    """
+    if start < 1 or end > 9999999999999999 or start > end:
+        raise ValueError("Начальное и конечное значения должны быть в правильном диапазоне.")
+
+    for num in range(start, end + 1):
+        yield f"{num:016d}"[:4] + " " + f"{num:016d}"[4:8] + " " + f"{num:016d}"[8:12] + " " + f"{num:016d}"[12:16]
+
+
+# Пример использования генератора
+for card_number in card_number_generator(1, 5):
+    print(card_number)
