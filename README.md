@@ -40,7 +40,13 @@
 Названия тестовых модулей совпадает с названиями модулей функций, но добавлен префикс "test_"
 Для запуска тестов необходимо ввести команду pytest в еурминале PeCharm.
 
+## Логирование работы функций
+
+Для логирования работы функций проекта используется модуль decorators.py. В нем содержится функция для отслеживания работы других функций с возможностьб вывода информации либо в консоль либо в файл.
+Так же для проверки работы декоратора логирования в пакете tests создан модуль тестирования test_decorators.py
+
 #### Ссылка на пул-реквест
 
 1. [GitHub](https://github.com/ChubshevAB/Home_work_project/pull/1)
 2. [Pull Request](https://github.com/ChubshevAB/Home_work_project/pull/4)
+3. [Pull Request Generators.py](https://github.com/ChubshevAB/Home_work_project/pull/5)
