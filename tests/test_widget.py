@@ -7,7 +7,7 @@ from src.widget import get_date, mask_account_card
     "value, expected",
     [
         (list("Maestro 1234123412341234"), "Maestro 1234 12** **** 1234"),
-        (list("Master Card 1234123412341234"), "Master Card 1234 12** **** 1234"),
+        (list("MasterCard 1234123412341234"), "MasterCard 1234 12** **** 1234"),
     ],
 )
 def test_mask_card(value: str, expected: str) -> bool:
