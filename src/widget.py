@@ -13,7 +13,7 @@ def mask_account_card(user_input: str) -> str:
         return mask_account
 
     for char in user_input:
-        if char.isalpha() or char == " ":
+        if char.isalpha():
             new_card_name += char
         elif char.isdigit():
             card_numbers += char
