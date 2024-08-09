@@ -97,3 +97,8 @@ def generators_card_number_generator():
         "0000 0000 0000 0004",
         "0000 0000 0000 0005",
     )
+
+
+@pytest.fixture
+def log():
+    return 'my_function ok\n'
