@@ -1,4 +1,0 @@
-2024-08-09 16:20:20,888 - INFO - Starting execution of 'get_date' with arguments: () {'user_date': '2024-07-20T02:26:18.671407'}
-2024-08-09 16:20:20,888 - INFO - 'get_date' executed successfully, result: 20-07-2024
-2024-08-09 16:35:53,562 - INFO - Ќачало выполнени€ 'mask_account_card' с аргументами: () {'user_input': 'чет 12345678901234567890'}
-2024-08-09 16:35:53,562 - INFO - 'mask_account_card' завершилась успешно, результат: чет  1234 56** **** 3456
