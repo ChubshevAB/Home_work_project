@@ -2,7 +2,8 @@ from functools import wraps
 
 
 def log(filename=None):
-    """Функция-декоратор логирует работу функции и выводит сообщение о успешной работе либо об ошибке в консоль либо в файл, если указать имя файла"""
+    """Функция-декоратор логирует работу функции и выводит сообщение о успешной работе
+       либо об ошибке в консоль либо в файл, если указать имя файла"""
 
     def decorator(func):
         @wraps(func)
@@ -11,9 +12,9 @@ def log(filename=None):
                 result = func(*args, **kwargs)
                 if filename:
                     with open(filename, "a", encoding="utf-8") as file:
-                        file.write(f"my_function ok\n")
+                        file.write("my_function ok\n")
                 else:
-                    print(f"my_function ok")
+                    print("my_function ok")
 
             except Exception as e:
                 if filename:
