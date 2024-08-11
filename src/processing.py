@@ -3,7 +3,8 @@ def filter_by_state(filterable_list: list, state: str = "EXECUTED") -> list:
 
     new_list = []
 
-    # Цикл сравнивает значение ключа элемента списка с аргументом state и если они равны записывает этот элемент в новый список
+    # Цикл сравнивает значение ключа элемента списка с аргументом state
+    # и если они равны записывает этот элемент в новый список
     for i in filterable_list:
         if i["state"] == state:
             new_list.append(i)
