@@ -13,13 +13,13 @@ def mask_account_card(user_input: str) -> str:
         return mask_account
 
     for char in user_input:
-        if char.isalpha() or char == " ":
+        if char.isalpha():
             new_card_name += char
         elif char.isdigit():
             card_numbers += char
 
     # Разбиваем номер карты на список из 4 элементов
-    card_numbers_list = [card_numbers[i : i + 4] for i in range(0, len(card_numbers), 4)]
+    card_numbers_list = [card_numbers[i: i + 4] for i in range(0, len(card_numbers), 4)]
 
     # Создание маски для номера карты
     # Только первая и последняя части остаются открытыми,

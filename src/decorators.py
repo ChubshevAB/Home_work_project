@@ -1,38 +1,38 @@
-from functools import wraps
+# from datetime import datetime
+from typing import Callable, Any
 
 
-def log(filename=None):
-    """Функция-декоратор логирует работу функции и выводит сообщение о успешной работе либо об ошибке в консоль либо в файл, если указать имя файла"""
+def log(filename: Any = None) -> Callable:
+    """Декоратор логирует работу функции"""
 
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
+    def my_decorator(func: Callable) -> Callable:
+        def wrapper(*args: Any, **kwargs: Any) -> Any:
             try:
+                # time_1 = datetime.now()
                 result = func(*args, **kwargs)
+                # time_2 = datetime.now()
                 if filename:
-                    with open(filename, "a", encoding="utf-8") as file:
-                        file.write(f"my_function ok\n")
+                    with open(filename, "a") as file:
+                        file.write("my_function ok\n")
                 else:
-                    print(f"my_function ok")
-
+                    print("my_function ok")
+                return result
             except Exception as e:
                 if filename:
-                    with open(filename, "a", encoding="utf-8") as file:
-                        file.write(f"my_function error: {e}, inputs: {args}, {kwargs}")
+                    with open(filename, "a") as file:
+                        file.write(f"my_function error: {e.__class__.__name__}. Inputs: {args}, {kwargs}\n")
                 else:
-                    print(f"my_function error: {e}, inputs: {args}, {kwargs}")
-                raise
-            return result
+                    print(f"my_function error: {e.__class__.__name__}. Inputs: {args}, {kwargs}")
 
         return wrapper
 
-    return decorator
+    return my_decorator
 
 
-@log(filename="")
+@log()
 def func(x, y):
-    return x + y
+    return x // y
 
 
-result = func(1, 2)
+result = func(4, 2)
 print(result)
