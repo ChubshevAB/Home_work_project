@@ -48,7 +48,8 @@ transactions = [
 
 
 def filter_by_currency(transactions: list) -> iter:
-    """Функция принимает в качестве аргумента список транзакций и код транзакции и возвращает итератор в соответствии с заданными аргументами"""
+    """Функция принимает в качестве аргумента список транзакций и код транзакции и возвращает итератор
+       в соответствии с заданными аргументами"""
     my_transactions = []
     for element in transactions:
         if element["operationAmount"]["currency"]["code"] == "USD":
