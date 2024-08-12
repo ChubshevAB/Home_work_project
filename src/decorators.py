@@ -3,9 +3,10 @@ from typing import Callable, Any
 
 
 def log(filename: Any = None) -> Callable:
-    """Декоратор логирует работу функции"""
+    """Декоратор логирует работу функции, выводя данные в консоль или в файл, если он указан"""
 
     def my_decorator(func: Callable) -> Callable:
+        '''Декоратор принимает в качестве аргумента декорируемую функцию'''
         def wrapper(*args: Any, **kwargs: Any) -> Any:
             try:
                 # time_1 = datetime.now()
