@@ -21,15 +21,15 @@ def test_log_success_stdout(capsys):
 def test_log_good_file_log():
     """Тестирует запись в файл после успешного выполнения"""
 
-    file_path = Path('d:\Python\Projects\Home_work_project\src\log.txt')
+    file_path = Path("d:\Python\Projects\Home_work_project\src\log.txt")
 
-    @log(filename='log.txt')
+    @log(filename="log.txt")
     def func(x, y):
         return x + y
 
     func(1, 2)
 
-    with open(file_path, 'r', encoding='utf-8') as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         logs = file.read()
 
     assert "my_function ok" in logs
