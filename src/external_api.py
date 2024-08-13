@@ -34,6 +34,3 @@ def conversion(transaction: dict) -> float:
         response = requests.request("GET", url, headers=headers)
         result = dict(response.json())
         return float(result["result"])
-
-
-print(conversion(transaction))
