@@ -3,21 +3,18 @@ import os
 from typing import Any
 
 
-file_path = "../data/operations.json"
+transactions_path = "../data/operations.json"
 
 
-def financial_transaction(file_path: str) -> Any:
+def financial_transaction(transactions_path: str) -> list:
     """принимает на вход путь до JSON-файла и возвращает список словарей с данными о финансовых транзакциях.
     Если файл пустой, содержит не список или не найден, функция возвращает пустой список"""
 
-    if not os.path.isfile(file_path) or os.stat(file_path).st_size == 0:
+    if not os.path.isfile(transactions_path) or os.stat(transactions_path).st_size == 0:
         return []
 
     else:
-        with open(file_path, "r", encoding="utf-8") as f:
+        with open(transactions_path, "r", encoding="utf-8") as f:
             data = json.load(f)
             if isinstance(data, list):
                 return data
-
-
-print(financial_transaction(file_path))
