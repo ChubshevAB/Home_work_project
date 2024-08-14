@@ -102,3 +102,8 @@ def generators_card_number_generator():
 @pytest.fixture
 def log():
     return 'my_function ok\n'
+
+
+@pytest.fixture
+def conversion():
+    return 2892096.467646
