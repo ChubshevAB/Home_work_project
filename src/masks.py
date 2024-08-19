@@ -5,7 +5,7 @@ logging.basicConfig(
     filename="../logs/logs_masks.log",
     filemode="w",
     level=logging.DEBUG,
-    format="%(levelname)s: %(asctime)s - %(name)s: %(message)s",
+    format="%(levelname)s: %(asctime)s - %(filename)s: %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 my_logger = logging.getLogger("log_mask")
