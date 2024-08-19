@@ -30,7 +30,5 @@ def test_conversion(mock_resp):
         ) == 2892096.467646
 
     mock_resp.assert_called_once_with(
-        "GET",
         "https://api.apilayer.com/exchangerates_data/convert?to=RUB&from=USD&amount=31957.58",
-        headers={"apikey": apilayer_key},
     )
