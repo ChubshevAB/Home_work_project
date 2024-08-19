@@ -1,10 +1,10 @@
 import csv
-import pandas as pd
 
+import pandas as pd
 
 # Переменная хранит путь к файлу с расширением csv
 file_path_csv = "../data/transactions.csv"
-file_path_excel = '../data/transactions_excel.xlsx'
+file_path_excel = "../data/transactions_excel.xlsx"
 
 
 def get_data_from_csv(file_path_csv: str) -> list:
@@ -18,16 +18,16 @@ def get_data_from_csv(file_path_csv: str) -> list:
     return result
 
 
-#print(get_data_from_csv(file_path_csv))
+# print(get_data_from_csv(file_path_csv))
 
 
 def get_data_from_excel(file_path_excel: str) -> list:
-    '''Принимает на вход путь к файлу в формате xlsx и возвращает список словарей с транзакциями'''
+    """Принимает на вход путь к файлу в формате xlsx и возвращает список словарей с транзакциями"""
 
     result = []
     df = pd.read_excel(file_path_excel)
-    result = df.to_dict(orient='records')
+    result = df.to_dict(orient="records")
     return result
 
 
-#print(get_data_from_excel(file_path_excel))
+# print(get_data_from_excel(file_path_excel))
