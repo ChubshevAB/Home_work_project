@@ -1,7 +1,4 @@
-import pytest
-import os
-import json
-from unittest.mock import patch, Mock
+from unittest.mock import patch
 
 
 from src.external_api import conversion
@@ -9,7 +6,7 @@ from src.external_api import conversion
 
 @patch("requests.get")
 def test_conversion(mock_resp):
-    apilayer_key = os.getenv("apilayer_key")
+
     mock_resp.return_value.json.return_value = {
         "success": True,
         "query": {"from": "USD", "to": "RUB", "amount": 31957.58},
@@ -17,7 +14,8 @@ def test_conversion(mock_resp):
         "date": "2024-08-13",
         "result": 2892096.467646,
     }
-    assert conversion(
+    assert (
+        conversion(
             {
                 "id": 441945886,
                 "state": "EXECUTED",
@@ -27,7 +25,9 @@ def test_conversion(mock_resp):
                 "from": "Maestro 1596837868705199",
                 "to": "Счет 64686473678894779589",
             }
-        ) == 2892096.467646
+        )
+        == 2892096.467646
+    )
 
     mock_resp.assert_called_once_with(
         "https://api.apilayer.com/exchangerates_data/convert?to=RUB&from=USD&amount=31957.58",
