@@ -51,6 +51,6 @@ def get_date(user_date: str) -> str:
 
 
 # Примеры использования
-print(mask_account_card(user_input="Счет 12345678901234567890"))
-print(mask_account_card(user_input="Master Card 1234123412341234"))
-print(get_date(user_date="2024-07-20T02:26:18.671407"))
+# print(mask_account_card(user_input="Счет 12345678901234567890"))
+# print(mask_account_card(user_input="Master Card 1234123412341234"))
+# print(get_date(user_date="2024-07-20T02:26:18.671407"))
