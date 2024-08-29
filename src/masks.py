@@ -1,5 +1,5 @@
 import logging
-import datetime
+
 
 logging.basicConfig(
     filename="../logs/logs_masks.log",
@@ -20,7 +20,7 @@ def get_mask_card_number(user_input_card: list) -> str:
         return "Некорректный ввод"
 
     # Разбиваем номер карты на список из 4 элементов
-    mask = [user_input_card[i : i + 4] for i in range(0, len(user_input_card), 4)]
+    mask = [user_input_card[i: i + 4] for i in range(0, len(user_input_card), 4)]
 
     # Заменяем цифры в номере карты на знак *
     for i in range(2, len(mask[1])):  # Заменяем все кроме первых двух
@@ -57,7 +57,7 @@ def get_mask_account(user_input_account: list) -> str:
 
 
 # Пример использования
-user_input_card = list(input("Введите номер карты: "))
-user_input_account = list(input("Введите номер счета: "))
-print(get_mask_card_number(user_input_card))
-print(get_mask_account(user_input_account))
+# user_input_card = list(input("Введите номер карты: "))
+# user_input_account = list(input("Введите номер счета: "))
+# print(get_mask_card_number(user_input_card))
+# print(get_mask_account(user_input_account))

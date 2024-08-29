@@ -1,4 +1,3 @@
-import pytest
 from src.decorators import func, log
 from pathlib import Path
 
@@ -18,10 +17,11 @@ def test_log_success_stdout(capsys):
 #     assert captured.out == "my_function error: ZeroDivisionError. Inputs: (1, 0), {}\n"
 
 
+file_path = Path("d:\\Python\\Projects\\Home_work_project\\src\\log.txt")
+
+
 def test_log_good_file_log():
     """Тестирует запись в файл после успешного выполнения"""
-
-    file_path = Path("d:\Python\Projects\Home_work_project\src\log.txt")
 
     @log(filename="log.txt")
     def func(x, y):
