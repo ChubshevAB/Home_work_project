@@ -57,7 +57,7 @@ def get_mask_account(user_input_account: list) -> str:
 
 
 # Пример использования
-user_input_card = list(input("Введите номер карты: "))
-user_input_account = list(input("Введите номер счета: "))
-print(get_mask_card_number(user_input_card))
-print(get_mask_account(user_input_account))
+# user_input_card = list(input("Введите номер карты: "))
+# user_input_account = list(input("Введите номер счета: "))
+# print(get_mask_card_number(user_input_card))
+# print(get_mask_account(user_input_account))
