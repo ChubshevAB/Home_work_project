@@ -37,4 +37,4 @@ def func(x, y):
 
 
 result = func(4, 2)
-print(result)
+# print(result)
