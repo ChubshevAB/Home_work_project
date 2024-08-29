@@ -1,22 +1,18 @@
 import json
 import os
 import logging
+from typing import Any
 
 
-logging.basicConfig(
-    filename="../logs/logs_utils.log",
-    filemode="w",
-    level=logging.DEBUG,
-    format="%(levelname)s: %(asctime)s - %(filename)s: %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
-)
+# logging.basicConfig(filename="../logs/logs_utils.log", filemode="w", level=logging.DEBUG,
+# ormat="%(levelname)s: %(asctime)s - %(filename)s: %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 my_logger = logging.getLogger("log_utils")
 
 
 transactions_path = "../data/operations.json"
 
 
-def financial_transaction(transactions_path: str) -> list:
+def financial_transaction(transactions_path: str) -> Any:
     """Принимает на вход путь до JSON-файла и возвращает список словарей с данными о финансовых транзакциях.
     Если файл пустой, содержит не список или не найден, функция возвращает пустой список"""
 
@@ -32,4 +28,4 @@ def financial_transaction(transactions_path: str) -> list:
                 return data
 
 
-print(financial_transaction(transactions_path))
+# print(financial_transaction(transactions_path))
