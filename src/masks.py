@@ -1,6 +1,5 @@
 import logging
 
-
 logging.basicConfig(
     filename="../logs/logs_masks.log",
     filemode="w",

@@ -1,7 +1,10 @@
+import math
+
 from src.data_search import data_search
 from src.processing import filter_by_state, sort_by_date
 from src.utils import financial_transaction
 from src.utils_csv_excel import get_data_from_csv, get_data_from_excel
+from src.widget import get_date, mask_account_card
 
 json_file = "data\\operations.json"
 csv_file = "data\\transactions.csv"
@@ -104,8 +107,53 @@ def main():
     if len(end_result) == 0:
         print("Не найдено ни одной транзакции, подходящей под ваши условия фильтрации")
     else:
-        print(f"Распечатываю итоговый список транзакций...\nВсего банковских операций в выборке: {len(end_result)}")
-        return end_result
+        print(f"Распечатываю итоговый список транзакций...\nВсего банковских операций в выборке: {len(end_result)}\n")
+        # return end_result
+
+    check_key_json = "from"
+    check_key_csv = ""
+    # value = np.nan
+
+    if choose_file == "1":
+        for i in end_result:
+            if check_key_json in i:
+                print(
+                    f"{get_date(i['date'])} {i['description']}\n{mask_account_card(i['from'])} -> "
+                    f"{mask_account_card(i['to'])}\nСумма: {i['operationAmount']['amount']} "
+                    f"{i['operationAmount']['currency']['name']}\n"
+                )
+            elif check_key_json not in i:
+                print(
+                    f"{get_date(i['date'])} {i['description']}\n{mask_account_card(i['to'])}\n"
+                    f"Сумма: {i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}\n"
+                )
+
+    elif choose_file == "2":
+        for i in end_result:
+            if i["from"] != check_key_csv:
+                print(
+                    f"{get_date(i['date'])} {i['description']}\n{mask_account_card(i['from'])} -> "
+                    f"{mask_account_card(i['to'])}\nСумма: {i['amount']} {i['currency_code']}\n"
+                )
+            elif i["from"] == check_key_csv:
+                print(
+                    f"{get_date(i['date'])} {i['description']}\n{mask_account_card(i['to'])}\nСумма: {i['amount']} "
+                    f"{i['currency_code']}\n"
+                )
+
+    elif choose_file == "3":
+        for i in end_result:
+            value = i["from"]
+            if isinstance(value, float) and math.isnan(value):
+                print(
+                    f"{get_date(i['date'])} {i['description']}\n{mask_account_card(i['to'])}\nСумма: {i['amount']} "
+                    f"{i['currency_code']}\n"
+                )
+            else:
+                print(
+                    f"{get_date(i['date'])} {i['description']}\n{mask_account_card(i['from'])} -> "
+                    f"{mask_account_card(i['to'])}\nСумма: {i['amount']} {i['currency_code']}\n"
+                )
 
 
-print(main())
+main()

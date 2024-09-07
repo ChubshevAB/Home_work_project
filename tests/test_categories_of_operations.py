@@ -1,6 +1,5 @@
 from src.categories_of_operations import categories_of_operations
 
-
 operations = [
     {
         "id": 441945886,

@@ -1,6 +1,5 @@
 from src.data_search import data_search
 
-
 operations = [
     {
         "id": 441945886,
@@ -19,7 +18,7 @@ operations = [
         "description": "Перевод с карты на счет",
         "from": "MasterCard 7158300734726758",
         "to": "Счет 35383033474447895560",
-    }
+    },
 ]
 
 

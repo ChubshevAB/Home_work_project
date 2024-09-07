@@ -101,7 +101,7 @@ def generators_card_number_generator():
 
 @pytest.fixture
 def log():
-    return 'my_function ok\n'
+    return "my_function ok\n"
 
 
 @pytest.fixture
