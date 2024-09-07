@@ -11,7 +11,7 @@ csv_file = "data\\transactions.csv"
 xlsx_file = "data\\transactions_excel.xlsx"
 
 
-def main():
+def main() -> None:
     """Функция обеспечивает взаимодействие с пользователем.
     Использует ранее написанные функции из модулей пакета src"""
 
