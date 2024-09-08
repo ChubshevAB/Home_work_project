@@ -1,5 +1,6 @@
-from src.decorators import func, log
 from pathlib import Path
+
+from src.decorators import func, log
 
 
 def test_log_success_stdout(capsys):

@@ -1,7 +1,7 @@
 import json
-from src.utils import financial_transaction
 from pathlib import Path
 
+from src.utils import financial_transaction
 
 transactions_path = Path("d:\\Python\\Projects\\Home_work_project\\data\\operations.json")
 

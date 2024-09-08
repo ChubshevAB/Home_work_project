@@ -45,12 +45,12 @@ def mask_account_card(user_input: str) -> str:
 def get_date(user_date: str) -> str:
     """Функция принимает в качестве аргумента строку с датой и возвращает эту дату в другом формате."""
 
-    new_date = f"{user_date[8:10]}-{user_date[5:7]}-{user_date[:4]}"
+    new_date = f"{user_date[8:10]}.{user_date[5:7]}.{user_date[:4]}"
 
     return new_date
 
 
 # Примеры использования
 # print(mask_account_card(user_input="Счет 12345678901234567890"))
-# print(mask_account_card(user_input="Master Card 1234123412341234"))
+# print(mask_account_card(user_input="American Express 4188660988695878"))
 # print(get_date(user_date="2024-07-20T02:26:18.671407"))

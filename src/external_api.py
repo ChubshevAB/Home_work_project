@@ -35,4 +35,5 @@ def conversion(transaction: dict) -> float:
         result = dict(response.json())
         return float(result["result"])
 
+
 # print(conversion(transaction))
