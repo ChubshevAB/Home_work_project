@@ -8,7 +8,8 @@ from typing import Any
 my_logger = logging.getLogger("log_utils")
 
 
-transactions_path = "../data/operations.json"
+transactions_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', 'operations.json'))
+# transactions_path = "../data/operations.json"
 
 
 def financial_transaction(transactions_path: str) -> Any:
