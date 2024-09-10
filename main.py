@@ -1,4 +1,5 @@
 import math
+import os
 
 from src.data_search import data_search
 from src.processing import filter_by_state, sort_by_date
@@ -6,9 +7,9 @@ from src.utils import financial_transaction
 from src.utils_csv_excel import get_data_from_csv, get_data_from_excel
 from src.widget import get_date, mask_account_card
 
-json_file = "data\\operations.json"
-csv_file = "data\\transactions.csv"
-xlsx_file = "data\\transactions_excel.xlsx"
+json_file = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data', 'operations.json'))
+csv_file = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data', 'transactions.csv'))
+xlsx_file = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data', 'transactions_excel.xlsx'))
 
 
 def main() -> None:
