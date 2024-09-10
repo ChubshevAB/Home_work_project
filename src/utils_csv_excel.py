@@ -1,10 +1,11 @@
 import csv
+import os
 
 import pandas as pd
 
 # Переменная хранит путь к файлу с расширением csv
-file_path_csv = "..\\data\\transactions.csv"
-file_path_excel = "..\\data\\transactions_excel.xlsx"
+file_path_csv = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', 'transactions.csv'))
+file_path_excel = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', 'transactions_excel.xlsx'))
 
 
 def get_data_from_csv(file_path_csv: str) -> list:
@@ -30,4 +31,4 @@ def get_data_from_excel(file_path_excel: str) -> list:
     return result
 
 
-# print(get_data_from_excel(file_path_excel))
+# print(get_data_from_csv(file_path_csv))
